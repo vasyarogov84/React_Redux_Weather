@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
-import { Sparklines, SparklinesLine, SparklinesReferenceLine  } from 'react-sparklines';
+import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 
 class ListOfCities extends Component {
 
@@ -15,10 +15,10 @@ class ListOfCities extends Component {
                     <td>{city.city.name}</td>
                     <td>
                         <Sparklines data={city.list.map(temp => temp.main.temp)}>
-                           <SparklinesLine color="red" />
-                           <SparklinesReferenceLine type="avg"/>
+                            <SparklinesLine color="red" />
+                            <SparklinesReferenceLine type="avg" />
                         </Sparklines>
-                        {((city.list.map(temp => temp.main.temp).reduce((a,b) => a + b)/city.list.length)* 9 / 5 - 459.67).toFixed(0) + "F"}
+                        {((city.list.map(temp => temp.main.temp).reduce((a, b) => a + b) / city.list.length) * 9 / 5 - 459.67).toFixed(0) + "F"}
                     </td>
                     <td>{city.city.population}</td>
                     <td>{city.list[0].main.humidity}</td>
@@ -28,16 +28,6 @@ class ListOfCities extends Component {
         );
     }
     render() {
-        //console.log(this.props.weather);
-        if (this.props.weather.length === 0) {
-            return <div>Type above...</div>
-        }
-
-        //console.log(data);
-
-        // for (let i = 0; i < 5; i++) {
-        //     sparklines.push(+(data[data.length - 1].list[i].main.temp * 9 / 5 - 459.67).toFixed(0));
-        // }
 
         return (
             <div>
