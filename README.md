@@ -1,3 +1,3 @@
 # React_Redux_Weather
 
-# Check live version at: viktorgrom4.netlify.com
+# Check live version at: [a link](viktorgrom4.netlify.com)
